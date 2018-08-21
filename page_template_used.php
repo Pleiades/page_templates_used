@@ -37,7 +37,7 @@ if( !class_exists( 'Page_template_used' ) ) {
 		/**
          * Show current template and template parts (if any)
          */
-        function displayTheTemplateName()
+        function display_the_template_name()
         {
             // Get the actual user
             $actualUser =  wp_get_current_user();
@@ -133,7 +133,7 @@ if (isset($Page_template_used_plugin))
     register_activation_hook( __FILE__, array(&$Page_template_used_plugin, 'init') );
 
     //Actions
-    add_action( 'wp_footer', array(&$Page_template_used_plugin, 'displayTheTemplateName') );
+    add_action( 'wp_footer', array(&$Page_template_used_plugin, 'display_the_template_name') );
     
     // Filter
     add_filter( 'template_include', array(&$Page_template_used_plugin,'retrieve_included_template'), 1000 );
